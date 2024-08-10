@@ -18,7 +18,7 @@ public class StepCounter extends CordovaPlugin implements SensorEventListener {
     private SensorManager sensorManager;
     private Sensor stepSensor;
     private CallbackContext callbackContext;
-    private int lastStepCount = -1; // استخدام -1 لتجنب القيم السالبة
+    private int lastStepCount = -1;
     private int totalStepCount = 0;
     private boolean isCounting = false;
 
@@ -73,9 +73,9 @@ public class StepCounter extends CordovaPlugin implements SensorEventListener {
 
         stepSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
         if (stepSensor != null) {
-            sensorManager.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_NORMAL); // استخدام SENSOR_DELAY_NORMAL
+            sensorManager.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_NORMAL);
             isCounting = true;
-            lastStepCount = -1; // تعيين القيمة الأولية إلى -1
+            lastStepCount = -1;
             totalStepCount = 0;
             sendSuccess("Step counting started.");
         } else {
@@ -106,7 +106,6 @@ public class StepCounter extends CordovaPlugin implements SensorEventListener {
         if (event.sensor.getType() == Sensor.TYPE_STEP_COUNTER) {
             int currentStepCount = (int) event.values[0];
 
-            // إذا كانت lastStepCount غير مهيأة، قم بتعيينها
             if (lastStepCount == -1) {
                 lastStepCount = currentStepCount;
                 return;
@@ -123,7 +122,7 @@ public class StepCounter extends CordovaPlugin implements SensorEventListener {
 
             // تحديث العدد الإجمالي
             totalStepCount += stepsSinceLastUpdate;
-            lastStepCount = currentStepCount; // تحديث lastStepCount
+            lastStepCount = currentStepCount; 
 
             if (isCounting && callbackContext != null) {
                 callbackContext.success(totalStepCount);
@@ -146,7 +145,7 @@ public class StepCounter extends CordovaPlugin implements SensorEventListener {
     private void sendSuccess(String message) {
         if (callbackContext != null) {
             callbackContext.success(message);
-            callbackContext = null; // Clear callbackContext after successful response
+            callbackContext = null;
         } else {
             Log.e("StepCounter", "CallbackContext is null.");
         }
@@ -155,7 +154,7 @@ public class StepCounter extends CordovaPlugin implements SensorEventListener {
     private void sendError(String message) {
         if (callbackContext != null) {
             callbackContext.error(message);
-            callbackContext = null; // Clear callbackContext after error response
+            callbackContext = null;
         } else {
             Log.e("StepCounter", "CallbackContext is null. Error: " + message);
         }
