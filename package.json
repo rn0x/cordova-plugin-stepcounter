@@ -1,6 +1,6 @@
 {
   "name": "cordova-stepcounter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Cordova plugin for step counting on Android.",
   "main": "www/StepCounter.js",
   "scripts": {

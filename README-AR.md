@@ -7,8 +7,8 @@
 
 <div align="center">
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rn0x/cordova-plugin-stepcounter/blob/main/LICENSE)
-[![npm version](https://badge.fury.io/js/cordova-stepcounter.svg)](https://badge.fury.io/js/cordova-plugin-stepcounter)
+[![License](https://img.shields.io/badge/license-GPL3.0-blue.svg)](https://github.com/rn0x/cordova-plugin-stepcounter/blob/main/LICENSE)
+[![npm version](https://badge.fury.io/js/cordova-stepcounter.svg)](https://badge.fury.io/js/cordova-stepcounter)
 ![VIEWS](https://komarev.com/ghpvc/?username=rn0x-cordova-plugin-stepcounter&label=REPOSITORY+VIEWS&style=for-the-badge)
 
 </div>
@@ -41,6 +41,19 @@ cordova plugin add https://github.com/rn0x/cordova-plugin-stepcounter.git
 
 ```bash
 cordova plugin rm cordova-plugin-stepcounter
+```
+
+### هيكل الدليل
+
+```
+cordova-plugin-stepcounter/
+├── src/
+│   └── android/
+│       └── StepCounter.java
+├── www/
+│   └── StepCounter.js
+├── plugin.xml
+└── package.json
 ```
 
 ## الاستخدام
