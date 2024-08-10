@@ -1,11 +1,9 @@
 # Cordova StepCounter Plugin
 
-<div style="text-align: center; margin-top: 20px;">
-    <a href="README-AR.md" style="margin-right: 20px; text-decoration: none;">📝 التوثيق بالعربية</a>
-    <a href="README.md" style="text-decoration: none;">📝 English Documentation</a>
-</div>
-
 <div align="center">
+
+<a href="README-AR.md" style="margin-right: 20px; text-decoration: none;">📝 التوثيق بالعربية</a>
+<a href="README.md" style="text-decoration: none;">📝 English Documentation</a>
 
 [![License](https://img.shields.io/badge/license-GPL3.0-blue.svg)](https://github.com/rn0x/cordova-plugin-stepcounter/blob/main/LICENSE)
 [![npm version](https://badge.fury.io/js/cordova-stepcounter.svg)](https://badge.fury.io/js/cordova-stepcounter)
